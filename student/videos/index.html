@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Javascript App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/css/global.css">
+    <link href="/css/prism.css" rel="stylesheet" />
+    <style>
+      /* Style the list */
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Style the list items */
+      li {
+        border-bottom: 1px solid #ddd;
+        padding: 22px;
+      }
+
+      li a {
+        text-decoration: none;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      A Javascript app, like React, uses the <code class="language-javascript">history</code> and <code class="language-javascript">location</code> objects for navigation. This does not pass the required context to the mobile app. Hence we need to rely on URL observation with some educated guesses as to what the navigation intention is.
+    </p>
+    <ul>
+      <li><a onclick="history.pushState({}, '', 'tabs/');">Tabs</a></li>
+      <li><a onclick="history.pushState({}, '', 'links/');">Links</a></li>
+      <li><a onclick="history.pushState({}, '', 'stack/');">Navigation Stack</a></li>
+    </ul>
+    <script src="/js/prism.js"></script>
+  </body>
+</html>
+

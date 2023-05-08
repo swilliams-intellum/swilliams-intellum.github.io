@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pop Back to Existing Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/css/global.css">
+  </head>
+  <body>
+    <p>Because a web app can have a cyclical navigation structure we need to be careful about pushing new content onto the stack.</p>
+    <p>If the page we are navigating to is already in the navigation stack, we should pop back to that page instead of pushing a new web view.</p>
+    <p>For example, if we open the page page it should pop back to the previous screen.</p>
+    <p><a onclick="history.pushState({}, '', '/student/videos/stack/'); return false;" href="#">Open the parent page</p>
+  </body>
+</html>
+

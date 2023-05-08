@@ -1,0 +1,30 @@
+{
+  "login": "john@example.com",
+  "ios_devices": [
+  ],
+  "post_login_location": "/",
+  "screens": [
+    {
+      "id": "standard",
+      "text": "standard",
+      "localized_text": "Standard",
+      "url": "/standard",
+      "icon": "home"
+    },
+    {
+      "id": "react",
+      "text": "text_react",
+      "localized_text": "React",
+      "url": "/student/videos",
+      "icon": "discover"
+    }
+  ],
+  "more": [
+    {
+      "id": "logout",
+      "localized_text": "Log Out"
+    }
+  ],
+  "features": [
+  ]
+}
