@@ -6,33 +6,33 @@
     <link rel="stylesheet" href="/css/global.css">
     <link href="/css/prism.css" rel="stylesheet" />
     <style>
-      /* Style the list */
       ul {
         list-style-type: none;
         margin: 0;
         padding: 0;
       }
 
-      /* Style the list items */
       li {
         border-bottom: 1px solid #ddd;
         padding: 22px;
       }
 
-      li a {
+      ul > a {
         text-decoration: none;
         color: black;
       }
     </style>
   </head>
   <body>
-    <p>
-      A Javascript app, like React, uses the <code class="language-javascript">history</code> and <code class="language-javascript">location</code> objects for navigation. This does not pass the required context to the mobile app. Hence we need to rely on URL observation with some educated guesses as to what the navigation intention is.
-    </p>
     <ul>
-      <li><a onclick="history.pushState({}, '', 'tabs/');">Tabs</a></li>
-      <li><a onclick="history.pushState({}, '', 'links/');">Links</a></li>
-      <li><a onclick="history.pushState({}, '', 'stack/');">Navigation Stack</a></li>
+      <li>
+        <p>
+          A Javascript app, like React, uses the <code class="language-javascript">pushState()</code> method in the <a title="History API" href="https://developer.mozilla.org/en-US/docs/Web/API/History/pushState">History API</a> instead of navigating to another page. Currently the mobile web view is not provided with an event corresponding with this action. Hence, we need to rely on URL observation with some educated guesses as to what the navigation intention is.
+        </p>
+      </li>
+      <a onclick="history.pushState({}, '', 'tabs/');"><li>Tabs</li></a>
+      <a onclick="history.pushState({}, '', 'history/pushState.html');"><li>pushState() / replaceState()</li></a>
+      <a onclick="history.pushState({}, '', 'stack/');"><li>Navigation Stack</li></a>
     </ul>
     <script src="/js/prism.js"></script>
   </body>

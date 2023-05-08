@@ -1,67 +1,68 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="UTF-8">
-	<title>Three Tabs Example</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="stylesheet" href="/css/global.css">
-	<link rel="stylesheet" href="/js/global.js">
-	<link href="/css/prism.css" rel="stylesheet" />
-	<style>
-		.tab {
-			overflow: hidden;
-			border: 1px solid #ccc;
-			background-color: #f1f1f1;
-		}
-		.tab a {
-			text-decoration: none;
-			color: black;
-			background-color: inherit;
-			float: left;
-			border: none;
-			outline: none;
-			cursor: pointer;
-			padding: 14px 16px;
-			transition: 0.3s;
-			border-right: 1px solid #ccc;
-		}
-		.tab a:hover {
-			background-color: #ddd;
-		}
-		.tab a.active {
-			background-color: #ccc;
-		}
-		.tabcontent {
-			padding: 6px 12px;
-			border: 1px solid #ccc;
-			border-top: none;
-		}
-	</style>
-</head>
-<body>
-	<div class="tab">
-		<a id="tab1" href="#" onclick="go('tab1'); return false;" class="tablinks active">Tab 1</a>
-                <a id="tab2" href="#" onclick="go('tab2'); return false;" class="tablinks">Tab 2</a>
-                <a id="tab3" href="#" onclick="go('tab3'); return false;" class="tablinks">Tab 3</a>
-	</div>
-
-	<div id="tab1" class="tabcontent">
-		<h3>tab1</h3>
-		<p>To prevent the tab's link from being opened in a new web view, you must add <code class="language-html">data-neeman-target="replace"</code></p>
-		<p>i.e. <code class="language-html">&lt;a data-neeman-target=&quot;replace&quot; href=&quot;/standard/tabs/tab2/&quot; class=&quot;tablinks&quot;&gt;Tab 2&lt;/a&gt;</code>
-
-	</div>
-
-	<script>
-		function go(tab) {
-		  let url = `/student/videos/tabs/?tab=${tab}`
-		  history.pushState({}, '', url);
-		  document.querySelector(`a.tablinks.active`).classList.remove("active");
-		  document.querySelector(`a#${tab}`).classList.add("active");
-		  document.querySelector(".tabcontent h3").innerText = tab;
-		}
-	</script>
-	<script src="/js/prism.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <title>Three Tabs Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/js/global.js">
+    <link href="/css/prism.css" rel="stylesheet"/>
+    <style>
+      .tab {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+      }
+      .tab a {
+        text-decoration: none;
+        color: black;
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        border-right: 1px solid #ccc;
+      }
+      .tab a:hover {
+        background-color: #ddd;
+      }
+      .tab a.active {
+        background-color: #ccc;
+      }
+      .tabcontent {
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tab">
+      <a id="tab1" href="#" onclick="go('tab1'); return false;" class="tablinks active">Tab 1</a>
+      <a id="tab2" href="#" onclick="go('tab2'); return false;" class="tablinks">Tab 2</a>
+      <a id="tab3" href="#" onclick="go('tab3'); return false;" class="tablinks">Tab 3</a>
+    </div>
+    <div id="tab1" class="tabcontent">
+      <h3>tab1</h3>
+      <p>To prevent the tab's link from being opened in a new web view, the URL's path must remain the same for all tabs.</p>
+    </div>
+    <script>
+      function go(tab) {
+        let url = `/student/videos/tabs/?tab=${tab}`
+        history.pushState({}, '', url);
+        document
+          .querySelector(`a.tablinks.active`)
+          .classList
+          .remove("active");
+        document
+          .querySelector(`a#${tab}`)
+          .classList
+          .add("active");
+        document.querySelector(".tabcontent h3").innerText = tab;
+      }
+    </script>
+    <script src="/js/prism.js"></script>
+  </body>
 </html>
-

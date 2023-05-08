@@ -1,67 +1,74 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="UTF-8">
-	<title>Three Tabs Example</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="stylesheet" href="/css/global.css">
-	<link href="/css/prism.css" rel="stylesheet" />
-	<style>
-		.tab {
-			overflow: hidden;
-			border: 1px solid #ccc;
-			background-color: #f1f1f1;
-		}
-		.tab a {
-			text-decoration: none;
-			color: black;
-			background-color: inherit;
-			float: left;
-			border: none;
-			outline: none;
-			cursor: pointer;
-			padding: 14px 16px;
-			transition: 0.3s;
-			border-right: 1px solid #ccc;
-		}
-		.tab a:hover {
-			background-color: #ddd;
-		}
-		.tab a.active {
-			background-color: #ccc;
-		}
-		.tabcontent {
-			padding: 6px 12px;
-			border: 1px solid #ccc;
-			border-top: none;
-		}
-	</style>
-</head>
-<body>
-	<div class="tab">
-		<a data-neeman-target="replace" href="/standard/tabs/" class="tablinks">Tab 1</a>
-                <a data-neeman-target="replace" href="/standard/tabs/tab2/" class="tablinks">Tab 2</a>
-                <a data-neeman-target="replace" href="/standard/tabs/tab3/" class="tablinks">Tab 3</a>
-	</div>
-
-	<div id="tab1" class="tabcontent">
-		<h3>Tab 1</h3>
-		<p>To prevent the tab's link from being opened in a new web view, you must add <code class="language-html">data-neeman-target="replace"</code></p>
-		<p>i.e. <code class="language-html">&lt;a data-neeman-target=&quot;replace&quot; href=&quot;/standard/tabs/tab2/&quot; class=&quot;tablinks&quot;&gt;Tab 2&lt;/a&gt;</code>
-
-	</div>
-
-	<script>
-		let path = window.location.pathname;
-		let activeTab = document.querySelector(`a[href="${path}"]`);
-		activeTab.classList.add("active");
-		
-		let tabs = location.pathname.split('/').filter(word => word != "")
-		let currentTab = tabs.length > 2 ? tabs.pop() : 'tab1'
-		document.querySelector(".tabcontent h3").innerText = currentTab;
-
-	</script>
-	<script src="/js/prism.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <title>Three Tabs Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="/css/global.css">
+    <link href="/css/prism.css" rel="stylesheet"/>
+    <style>
+      .tab {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+      }
+      
+.tab a {
+        text-decoration: none;
+        color: black;
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        border-right: 1px solid #ccc;
+      }
+      
+.tab a:hover {
+        background-color: #ddd;
+      }
+      
+.tab a.active {
+        background-color: #ccc;
+      }
+      
+.tabcontent {
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tab">
+      <a data-neeman-target="replace" href="/standard/tabs/" class="tablinks">Tab 1</a>
+      <a data-neeman-target="replace" href="/standard/tabs/tab2/" class="tablinks">Tab 2</a>
+      <a data-neeman-target="replace" href="/standard/tabs/tab3/" class="tablinks">Tab 3</a>
+    </div>
+    <div id="tab1" class="tabcontent">
+      <h3>Tab 1</h3>
+      <p>To prevent the tab's link from being opened in a new web view, you must add
+        <code class="language-html">data-neeman-target="replace"</code>
+      </p>
+      <p>i.e.
+        <code class="language-html">&lt;a data-neeman-target=&quot;replace&quot; href=&quot;/standard/tabs/tab2/&quot; class=&quot;tablinks&quot;&gt;Tab 2&lt;/a&gt;</code>
+      </p>
+    </div>
+    <script>
+      let path = window.location.pathname;
+      let activeTab = document.querySelector(`a[href="${path}"]`);
+      activeTab.classList.add("active");
+      let tabs = location
+        .pathname
+        .split('/')
+        .filter(word => word != "")
+      let currentTab = tabs.length > 2
+        ? tabs.pop()
+        : 'tab1'
+      document.querySelector(".tabcontent h3").innerText = currentTab;
+    </script>
+    <script src="/js/prism.js"></script>
+  </body>
 </html>
-

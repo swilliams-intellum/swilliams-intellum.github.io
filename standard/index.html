@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Standard HTML App</title>
+    <title>Multipage App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/css/global.css">
     <style>
@@ -18,7 +18,7 @@
         padding: 22px;
       }
 
-      li a {
+      ul > a {
         text-decoration: none;
         color: black;
       }
@@ -26,8 +26,9 @@
   </head>
   <body>
     <ul>
-        <li><a href="tabs/">Tabs</a></li>
-        <li><a href="links/">Links</a></li>
+       <li><p>A multipage app uses standard HTML links and forms for navigation. The mobile web view is is given <a title="WKNavigationType" href="https://developer.apple.com/documentation/webkit/wknavigationtype">information about these event</a>. This is used to translate to a native mobile navigation experience.</li>
+       <a href="tabs/"><li>Tabs</li></a>
+       <a href="links/"><li>Links</li></a>
     </ul>
   </body>
 </html>

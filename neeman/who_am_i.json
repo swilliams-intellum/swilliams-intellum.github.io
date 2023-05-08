@@ -7,16 +7,16 @@
     {
       "id": "standard",
       "text": "standard",
-      "localized_text": "Standard",
+      "localized_text": "Multipage App",
       "url": "/standard",
-      "icon": "home"
+      "icon": "icon-05"
     },
     {
       "id": "react",
       "text": "text_react",
       "localized_text": "React",
       "url": "/student/videos",
-      "icon": "discover"
+      "icon": "icon-34"
     }
   ],
   "more": [

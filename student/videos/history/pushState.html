@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>pushState() / replaceState()</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <link href="/css/prism.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      li { padding: 5px; }
+    </style>
+  </head>
+  <body>
+    <p>
+      The web app is not given any indication of when the state changes. We are solving this by observing changes to the URL.
+    </p>
+    <p>
+      For every section of the site that contains an SPA (i.e. uses pushState()) we enter its corresponding URL path prefix
+      into a <a href="https://github.com/intellum/exceed-ios/blob/07b8781ff522430baefef938d61b9a6b78904197/ExceedLMS/Source/URLHandling/SPAURLObserver.swift#L10-L12">list (ignore rules)</a>.
+      If the current URL is prefixed by one of these, we treat all subsequent URL change as push<sup>1</sup> navigations unless they meets any of a set of <a href="ignoreRules.html">defined exceptions</a>.
+    </p>
+    <p>
+      There is no simple way for the mobile app to differentiate between <code class="language-javascript">pushState()</code> and <code class="language-javascript">replaceState()</code>,
+      so in order to get the desired behavior for <code class="language-javascript">replaceState()</code>, we need to adhere to one of the <a href="ignoreRules.html">defined exceptions</a>.
+    </p>
+    <p>
+      &nbsp;<span id="sheep"></span>
+    </p>
+
+    <ul>
+      <li><a href="#" onclick="navigate(this, 'pushed.html'); return false;">pushState()</a></li>
+      <li><a href="#" onclick="navigate(this, 'pushed.html'); return false;">replaceState()</a></li>
+      <li><a href="#" onclick="navigate(this, '#fragment'); return false;">replaceState() with fragment</a></li>
+      <li><a href="#" onclick="navigate(this, '?key=value'); return false;">replaceState() with same path</a></li>
+    </ul>
+    <p>&nbsp;</p>
+
+    <hr />
+    <p><cite>1. A push navigation is when we push a new web view onto the navigation stack. i.e. in iOS this is animated in from the right to cover the existing web view.</cite></p>
+
+    <script>
+      function navigate(element, to) {
+	let sheep = getSheep() + "&#x1F40F;";
+	let state = history.state || {};
+	state.sheep = sheep;
+	history.pushState(state, '', to);
+	renderState();
+      }
+
+      function renderState() {
+	document.querySelector("#sheep").innerHTML = getSheep();
+      }
+
+      function getSheep() {
+	let state = history.state || {};
+	return state.sheep || '';
+      }
+
+      renderState();
+      addEventListener("popstate", (event) => {});
+      onpopstate = (event) => {
+	renderState();
+      };
+    </script>
+    <script src="/js/prism.js"></script>
+  </body>
+</html>

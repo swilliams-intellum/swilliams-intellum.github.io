@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/css/global.css">
+  </head>
+  <body>
+    <p>A full list of ignore rules can be seen in <a href="https://github.com/intellum/exceed-ios/blob/master/ExceedLMS/Source/URLHandling/Rules/URLChangeRules.swift">URLChangeRules.swift</a>.</p>
+    <p>If any of these rules return true the state change is not handled by the mobile app and is left to the SPA. This means a new web view is not pushed onto the navigation stack.</p>
+    <h3>The URL Path is the Same</h3>
+    <p>
+      The main rule to concern yourself with is the SamePathRule. If all that is changing is the query string or the fragment, we do not push a new web view onto the stack.
+    </p>
+    <p>For example, the following URL changes do not produce a push navigation.
+      <center>
+        <h3>Query Parameters</h3>
+        <cite>/path/to/page?tab=about</cite><br />
+        <cite>&darr;</cite><br />
+        <cite>/path/to/page?tab=privacy</cite>
+      </center>
+      <center>
+        <h3>Fragment Changes</h3>
+        <cite>/path/to/page#about</cite><br />
+        <cite>&darr;</cite><br />
+        <cite>/path/to/page#privacy</cite>
+      </center>
+    </p>
+  </body>
+</html>
+
