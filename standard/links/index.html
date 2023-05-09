@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Navigation Example</title>
+    <title>Navigation with Links</title>
     <link rel="stylesheet" href="/css/global.css">
     <link href="/css/prism.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,16 +11,14 @@
   </head>
   <body>
     <h1>Links</h1>
-
-    <!-- Link navigation -->
     <ul>
       <li><a id="regularLink" href="/standard/links/pushed.html">Link navigation</a></li>
       <li><a data-neeman-target="replace" href="/standard/links/forceReplace.html">Force the link to load in the current web view.</a></li>
     </ul>
 
     <hr />
+
     <h1>Forms</h1>
-    <!-- Form navigation -->
     <h3>This page has been submitted to <span class="submissionCount">0</span> times.</h3>
     <p>
     <form action="/standard/links/" method="GET">
@@ -30,24 +28,20 @@
     </p>
 
     <hr />
+
     <h1>Javascript</h1>
     <p>Setting <code class="language-javascript">window.location.href</code> will cause the page to be replaced.</p>
-    <!-- JavaScript navigation -->
     <p><button onclick="window.location.href = '/standard/links/forceReplace.html';">JavaScript Navigation Button</button> </p>
-
     <p>To avoid this, call the <code class="language-javascript">click()</code> method on the anchor.</p>
     <p>i.e. <code class="language-javascript">document.querySelector('#regularLink').click();</code></p>
     <p><button onclick="document.querySelector('#regularLink').click();">Force the link to load in the current web view.</button> </p>
 
     <script>
       let submissionNumber = (new URL(location.href)).searchParams.get("submission") || "0";
-
       document.querySelector("#submission").value = parseInt(submissionNumber) + 1;
       document.querySelector(".submissionCount").innerText = submissionNumber;
-
-	</script>
+    </script>
     <script src="/js/prism.js"></script>
-
   </body>
 </html>
 
