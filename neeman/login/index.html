@@ -6,9 +6,8 @@
   <body>
     <script>
       const url = new URL(window.location.href);
-      const searchParams = url.searchParams;
       const scheme = url.searchParams.get("scheme").replace(/\W/g, "");
-      window.location.href = `${scheme}://authentication/succeeded/1234?user_id=1234`;
+      window.location.href = `${scheme}://authentication/succeeded/1234?user_id=1`;
     </script>
   </body>
 </html>
