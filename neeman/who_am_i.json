@@ -5,18 +5,18 @@
   "post_login_location": "/",
   "screens": [
     {
-      "id": "standard",
-      "text": "standard",
-      "localized_text": "Multipage App",
-      "url": "/standard",
-      "icon": "icon-05"
-    },
-    {
       "id": "react",
       "text": "text_react",
       "localized_text": "React",
       "url": "/student/videos",
       "icon": "icon-34"
+    },
+    {
+      "id": "standard",
+      "text": "standard",
+      "localized_text": "Multipage App",
+      "url": "/standard",
+      "icon": "icon-05"
     }
   ],
   "more": [
