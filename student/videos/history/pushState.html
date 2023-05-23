@@ -11,11 +11,11 @@
   </head>
   <body>
     <p>
-      The web app is not given any indication of when the state changes. We are solving this by observing changes to the URL.
+      The mobile app is not given any indication of when the state (History API) changes. We are solving this by observing changes to the URL.
     </p>
     <p>
       For every section of the site that contains an SPA (i.e. uses pushState()) we enter its corresponding URL path prefix
-      into a <a href="https://github.com/intellum/exceed-ios/blob/07b8781ff522430baefef938d61b9a6b78904197/ExceedLMS/Source/URLHandling/SPAURLObserver.swift#L10-L12">list (ignore rules)</a>.
+      into a <a href="https://github.com/intellum/exceed-ios/blob/07b8781ff522430baefef938d61b9a6b78904197/ExceedLMS/Source/URLHandling/SPAURLObserver.swift#L10-L12">list</a>.
       If the current URL is prefixed by one of these, we treat all subsequent URL change as push<sup>1</sup> navigations unless they meets any of a set of <a href="ignoreRules.html">defined exceptions</a>.
     </p>
     <p>
